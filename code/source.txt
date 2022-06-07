@@ -1,0 +1,401 @@
+<!-- MAIN_PAGE -->
+<!DOCTYPE html>
+<html> 
+    <head>
+        <meta charset="utf8">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial_scale=1">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        
+        <!-- Latest compiled and minified CSS -->
+        <!-- <link rel="stylesheet" href="css/style.css"> -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+        
+        <script>
+          function analyse() {
+            let link = document.getElementById("link-holder").value;
+            window.location.replace(`/analyse?link="${link}"`);
+          }
+        </script>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <a class="navbar-brand" href="#">Sentiment App</a>
+            </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+            <a class="nav-item nav-link active" href="#analysis">Analysis <span class="sr-only">(current)</span></a>
+            <!-- ! подменю сделать -->
+            <!-- ? результаты анализа -->
+            <!-- ? топики -->
+            <!-- ? синтаксические деревья -->
+            <a class="nav-item nav-link" href="#possibilities">Possibilities</a>
+            <a class="nav-item nav-link" href="#about">About</a>
+            <a class="nav-item nav-link disabled" href="#contacts">Contacts</a>
+            </div>
+        </div>
+        </nav>
+        <title>Sentiment analysis</title>
+    </head>
+    <body>
+        <!-- Showcase -->
+        <section
+      class="bg text-light p-5 p-lg-0 pt-lg-5 pb-lg-5 text-center text-sm-start"
+    >
+      <div class="container">
+        <div class="d-sm-flex align-items-center justify-content-between">
+          <div>
+            <h1>Sentiment analysis </span></h1>
+            <p class="lead my-2">
+              Almost everything you need <br>to analyse social opinions
+            </p>
+            <button
+              class="btn btn-light btn-lg"
+              data-bs-toggle="modal"
+              data-bs-target="#try"
+              style="position: center;"
+            >
+              Try your own
+            </button>
+          </div>
+          <img
+            class="img-fluid w-50 rounded mx-auto float-right d-flex d-sm-inline-block"
+            src="{{ url_for('static', filename='showcase1.svg')}}"
+            alt="photo tuta"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Possibilities -->
+
+    <section id="possibilities" class="bg-light p-5">
+        <h2>Possibilities</h2>
+        <div class="container">
+            <div class="row text-center g-4">
+              <div class="col-md">
+                <div class="card bg-dark text-light">
+                  <div class="card-body text-center">
+                    <div class="h1 mb-3">
+                      <i class="bi bi-laptop"></i>
+                    </div>
+                    <h3 class="card-title mb-3">Scrapping</h3>
+                    <p class="card-text">
+                      Selenium Scrapper and YouTube API classes to scrap a video info and comments. There is the idea about sentiment analysis of that and topic modeling
+                    </p>
+                    <a href="#" class="btn btn-outline-light">Read More</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md">
+                <div class="card bg-secondary text-light">
+                  <div class="card-body text-center">
+                    <div class="h1 mb-3">
+                      <i class="bi bi-person-square"></i>
+                    </div>
+                    <h3 class="card-title mb-3">Sentiment Analysis</h3>
+                    <p class="card-text">
+                      LSTM (long short-term memory), GRU (gated recurrent unit), 1 dimensional CNN (convolutional neural netwok) optuna cross validated meta model
+                    </p>
+                    <a href="#https://github.com/addicted-by/NLP/blob/main/articles/neural_networks_text_classification.pdf" class="btn btn-outline-light">Read More</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md">
+                <div class="card bg-dark text-light">
+                  <div class="card-body text-center">
+                    <div class="h1 mb-3">
+                      <i class="bi bi-people"></i>
+                    </div>
+                    <h3 class="card-title mb-3">Topic Modeling</h3>
+                    <p class="card-text">
+                      A Bert topic model implemented into the background to understand themes of opinions. Also you can read about latent Dirichlet allocation.
+                    </p>
+                    <a href="#" class="btn btn-outline-light">Read More</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+    </section>
+
+    <!-- Youtube -->
+
+    <section id="try" class="bg-danger text-light p-5">
+        <div class="container">
+          <div class="d-md-flex justify-content-between align-items-center">
+            <h3 class="mb-3 pr-5 mb-md-0">YouTube
+            </h3>
+  
+            <div class="input-group news-input">
+              <input type="text" id="link-holder" class="form-control" placeholder="Link" />
+              <button class="btn btn-dark btn-lg" type="button" onclick="analyse();">Analyse</button>
+            </div>
+          </div>
+        </div>
+    </section>
+
+    <!-- Twitter -->
+
+
+    <section id="about" class="p-5 bg-light">
+      <h2>About</h2>
+        <p>
+          Here is my first experience in the web development. I decided to start by implementing my diploma work deep into the web-service to analyse a social opinion in the video hosting YouTube. You can contact me, if you want to suggest something or prevent some liks can be existed. Thank you for watching this.
+        </p>
+    </section>
+
+    <!-- Contacts -->
+    <section id='contacts' class="p-5">
+        <div class="container">
+          <div class="row g-4">
+            <div class="col-md">
+              <h2 class="text-center text-light mb-4">Contact Info</h2>
+              <ul class="list-group list-group-flush lead">
+                <li class="list-group-item">
+                  <span class="fw-bold">Phone:</span> (999) 608-92-52
+                </li>
+                <li class="list-group-item">
+                  <span class="fw-bold">Email:</span> ras.unlucky@yandex.ru
+                </li>
+                <li class="list-group-item">
+                  <span class="fw-bold">Telegram:</span>
+                  @addicted-by
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+  <!-- Footer -->
+    <footer class="p-5 bg-dark text-white text-center position-relative">
+      <div class="container">
+        <p class="lead">Copyright &copy; 2022, Ryabykin Aleksey</p>
+
+        <a href="#" class="position-absolute bottom-0 end-0 p-5">
+          <i class="bi bi-arrow-up-circle h1"></i>
+        </a>
+      </div>
+    </footer>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script src="js/darkmode.js"></script>
+    </body>
+</html>
+<!-- ANALYSIS -->
+<!DOCTYPE html>
+<html> 
+    <head>
+        <meta charset="utf8">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,200;0,500;1,300&display=swap" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial_scale=1">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <a class="navbar-brand" href="#">Sentiment App</a>
+            </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+            <a class="nav-item nav-link active" href="#analysis">Analysis <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link" href="#home">Home</a>
+            </div>
+        </div>
+        </nav>
+        <title>Sentiment analysis</title>
+    </head>
+    <body>
+        
+        <!-- Showcase -->
+        <section
+      class="bg text-light p-5 p-lg-0 pt-lg-5 text-center text-sm-start"
+    >
+      <div class="container">
+        <div class="d-sm-flex align-items-center justify-content-between">
+          <div>
+            <h1>YouTube analysis </span></h1>
+            <p class="lead my-2">
+              Almost everything you need <br>to analyse social opinions
+            </p>
+          </div>
+          <img
+            class="img-fluid w-50 d-none d-sm-block"
+            src="{{ url_for('static', filename='showcase1.svg')}}"
+            alt="photo tuta"
+          />
+        </div>
+      </div>
+    </section>
+
+
+    <section class="analysis bg text-dark p-5 pt-lg-5 text-left text-sm-start">
+        <div class="container">
+            <h2>{{youtube_title}}</h2>
+            <!-- <iframe class="embed-responsive-item"
+            frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            src="{{context_str}}">
+            </iframe> -->
+
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/MxCRgtdAuBo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <img class="img-fluid w-50 rounded mx-auto float-right d-flex d-sm-inline-block" src="{{path_word_clouds}}" alt="Word cloud">
+            <div class="row align-items-start">
+              <div class="col-sm"><img
+                class="img-fluid w-25 rounded mx-auto float-right d-flex d-sm-inline-block"
+                src="{{ url_for('static', filename='positive-vote.png')}}"
+                alt="Positive Icon"
+              />
+              </div>
+              <div class="col-sm"><img
+                class="img-fluid w-25 rounded mx-auto float-right d-flex d-sm-inline-block"
+                src="{{ url_for('static', filename='negative-vote.png')}}"
+                alt="Negative Icon"
+              />
+              </div>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-sm">
+                    {{positive_percentage}}
+                </div>
+                <div class="col-sm">
+                    {{negative_percentage}}
+                </div>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-sm">
+                    {{positive_count}}
+                </div>
+                <div class="col-sm">
+                    {{negative_count}}
+                </div>
+            </div>
+          </div>
+
+          <div class="row align-items start">
+              <div class="col-sm">
+                  <h3>Most liked</h3>
+              </div>
+              <div class="col-sm"><img
+                class="img-fluid w-25 rounded mx-auto float-right d-flex d-sm-inline-block"
+                src="{{ url_for('static', filename='heart.png')}}"
+                alt="Heart"
+              /></div>
+              <div class="col-sm"><img
+                class="img-fluid w-25 rounded mx-auto float-right d-flex d-sm-inline-block"
+                src="{{ url_for('static', filename='comment.png')}}"
+                alt="Comment"
+              /></div>
+          </div>
+          <div class="row align-items center">
+              <div class="col-sm">
+                  {{ml_comment_formated}}
+              </div>
+              <div class="col-sm">
+                  {{ml_value_of_likes}}
+              </div>
+              <div class="col-sm">
+                  {{ml_value_of_comments}}
+              </div>
+          </div>
+          <div class="row align-items center">
+              <div class="col-sm">
+                  <h3>Most commented</h3>
+              </div>
+              <div class="col-sm"><img
+                class="img-fluid w-25 rounded mx-auto float-right d-flex d-sm-inline-block"
+                src="{{ url_for('static', filename='heart.png')}}"
+                alt="Heart"
+              /></div>
+              <div class="col-sm"><img
+                class="img-fluid w-25 rounded mx-auto float-right d-flex d-sm-inline-block"
+                src="{{ url_for('static', filename='comment.png')}}"
+                alt="Heart"
+              /></div>
+          </div>
+          <div class="row align-items end">
+              <div class="col-sm">
+                  {{mc_comment_formated}}
+              </div>
+              <div class="col-sm">
+                  {{mc_value_of_likes}}
+              </div>
+              <div class="col-sm">
+                  {{mc_value_of_comments}}
+              </div>
+          </div>
+
+          
+    </section>
+
+  <!-- Footer -->
+    <footer class="p-5 bg-dark text-white text-center position-relative">
+      <div class="container">
+        <p class="lead">Copyright &copy; 2022, Ryabykin Aleksey</p>
+
+        <a href="#" class="position-absolute bottom-0 end-0 p-5">
+          <i class="bi bi-arrow-up-circle h1"></i>
+        </a>
+      </div>
+    </footer>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script src="js/darkmode.js"></script>
+    </body>
+
+</html>
+
+<p style='background:green;'> 
+    <font color='black' style='padding-bottom:1%; border-bottom:4px solid green'>1</font>.
+    <font color='black' style='padding-bottom:1%; border-bottom:4px solid red'> But the script is awful.</font>. 
+</p> 
+
+<script>
+    function generateCommentHtml(comment_json) {
+        let comment = JSON.parse(comment_json);
+        let color = comment.color
+        let sentences = comment.sentences
+        let sentenceColors = comment.sentenceColors
+
+        result_html = `<span style='background-color: ${color}'>`
+
+        for (let i = 0; i < sentences.length; ++i) {
+            result_html += 
+                `<span style='box-sizing: border-box; border-bottom: 4px solid ${sentenceColors[i]}'>
+                    ${sentences[i]} + ' '
+                </span>`
+        }
+
+        return result_html + "</span>"
+    }
+
+    function addComment(id, html) {
+        document.getElementById(id).innerHTML = html; 
+    }
+
+    function addMostLiked(html) {
+        addComment("most-liked", html)
+    }
+
+    function addMostCommented(html) {
+        addComment("most-commented", html)
+    }
+    
+</script>
